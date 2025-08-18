@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Student Data</title>
+    <link rel="stylesheet" href="styles.css"><!-- Add this line -->
+</head>
+<body>
+    <div class="main-wrapper">
+      <div class="form-section">
+        <h2>Edit Student here!</h2>
+        <form th:action="@{/update}" th:object="${student}" method="post">
+          <label>Roll No:</label>
+          <input type="number" th:field="*{rollNo}" readonly>
+
+          <label>Name:</label>
+          <input type="text" th:field="*{name}" required>
+
+          <label>Age:</label>
+          <input type="number" th:field="*{age}" required>
+
+          <label>Email:</label>
+          <input type="email" th:field="*{email}" required>
+
+          <label>Date of Birth:</label>
+          <input type="date" th:field="*{dob}" required>
+
+          <button type="submit">Update</button>
+        </form>
+      </div>
+    </div>
+</body>
+</html>

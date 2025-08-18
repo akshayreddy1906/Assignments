@@ -1,0 +1,215 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f7fafd;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main wrapper for all page content */
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 18px;
+    margin: 0 auto;
+    width: 100vw;
+}
+
+/* Headings */
+h2 {
+    text-align: center;
+    width: 100%;
+    color: #22543d;
+    margin-bottom: 12px;
+    margin-top: 32px;
+    letter-spacing: 0.03em;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* Form section and card styling */
+.form-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+/* Card dialog for add/edit forms */
+form {
+    background: #fff;
+    box-shadow: 0 2px 14px rgba(44,61,83,0.08);
+    border-radius: 12px;
+    padding: 24px 24px 16px 24px;
+    margin-bottom: 0;
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+
+/* Form Labels */
+form label {
+    font-weight: 500;
+    color: #2d3748;
+    font-size: 15px;
+    margin-bottom: 5px;
+    margin-top: 13px;
+    align-self: flex-start;
+}
+
+form label:first-child {
+    margin-top: 0;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form input[type="date"] {
+    width: 100%;
+    padding: 9px 11px;
+    margin-bottom: 0;
+    margin-top: 0;
+    border: 1px solid #e2e8f0;
+    border-radius: 5px;
+    font-size: 15.5px;
+    box-sizing: border-box;
+    background: #f8fafc;
+    transition: border 0.16s;
+    outline: none;
+}
+
+form input:focus {
+    border: 1.5px solid #38b2ac;
+    background: #f2f6fa;
+}
+
+form button {
+    background: #38b2ac;
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-size: 15.5px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 18px;
+    align-self: center;
+    transition: background 0.16s;
+    box-shadow: 0 2px 12px rgba(44,61,83,0.05);
+}
+form button:hover {
+    background: #22543d;
+}
+
+/* Table section styling */
+.table-section {
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.table-container {
+    width: 88vw;
+    max-width: 1500px;
+    margin: 12px auto 42px auto;
+    background: #fff;
+    border-radius: 13px;
+    box-shadow: 0 8px 30px rgba(44,61,83,0.10);
+    padding: 12px 0 0 0;
+    overflow-x: auto;
+    box-sizing: border-box;
+}
+
+/* Table styles */
+.custom-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    font-family: inherit;
+}
+
+.custom-table th {
+    text-align: left;
+    text-transform: uppercase;
+    background: #e6fffa;
+    color: #22543d;
+    font-weight: 700;
+    font-size: 14.5px;
+    padding: 12px 14px;
+    letter-spacing: 0.03em;
+    border: none;
+}
+.custom-table th:first-child { border-top-left-radius: 13px; }
+.custom-table th:last-child  { border-top-right-radius: 13px; }
+
+.custom-table td {
+    padding: 12px 14px;
+    border: none;
+    background: #fff;
+    font-size: 15px;
+    color: #333b4a;
+    vertical-align: middle;
+}
+.custom-table tbody tr {
+    border-top: 1px solid #eff2f5;
+    transition: background 0.12s;
+}
+.custom-table tbody tr:hover td {
+    background: #e6fffa;
+}
+.custom-table tr:last-child td:first-child { border-bottom-left-radius: 13px; }
+.custom-table tr:last-child td:last-child  { border-bottom-right-radius: 13px; }
+
+/* Link/Action Icon styles */
+a {
+    margin: 0 5px;
+    text-decoration: none;
+    font-size: 17px;
+    vertical-align: middle;
+    color: #38b2ac;
+}
+
+@media (max-width: 1000px) {
+    .main-wrapper {
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+        gap: 10px;
+    }
+    .form-section, .table-section {
+        width: 100% !important;
+        align-items: center;
+    }
+    .table-container {
+        width: 98vw;
+        margin: 8px 0 36px 0;
+        max-width: 100vw;
+    }
+    form {
+        width: 96vw;
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 600px) {
+    h2 {
+        font-size: 18px;
+        margin-top: 22px;
+        margin-bottom: 7px;
+    }
+    .table-container {
+        padding: 5px 0 0 0;
+    }
+    form {
+        padding: 14px 7vw 10px 7vw;
+        width: 99vw;
+        min-width: unset;
+        max-width: unset;
+    }
+}

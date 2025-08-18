@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+     <title>Student CRUD Application</title>
+     <link rel="stylesheet" href="/styles.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+      <h2>Add Student here!</h2>
+      <div class="main-wrapper">
+	      <form th:action="@{/save}" th:object="${student}" method="post">
+	           Name: <input type="text" th:field="*{name}" required><br>
+	           Age: <input type="number" th:field="*{age}" required><br>
+	           Email: <input type="email" th:field="*{email}" required><br>
+	           Date of Birth: <input type="date" th:field="*{dob}" required><br>
+	           <button type="submit">Add</button>
+	      </form>
+	 
+	      <h2>All Student Data here!</h2>
+	 	  <div class = "table-container">
+	      <table class = "custom-table">
+	        <tr>
+	          <th>Roll No</th>
+	          <th>Name</th>
+	          <th>Age</th>
+	          <th>Email</th>
+	          <th>Date of Birth</th>
+	          <th>Action</th>
+	        </tr>
+	        
+	        <tr th:each="s : ${list}">
+	            <td th:text="${s.rollNo}"></td>
+	            <td th:text="${s.name}"></td>
+	            <td th:text="${s.age}"></td>
+	            <td th:text="${s.email}"></td>
+	            <td th:text="${s.dob}"></td>
+	            <td>
+	                <a th:href="@{'/edit/'+${s.rollNo}}">
+	                  <i class="fa-solid fa-pen-to-square" style="color: #0300a3;"></i>
+	                </a>
+	                <a th:href="@{'/delete/'+${s.rollNo}}">
+	                  <i class="fa-solid fa-trash" style="color: #ff351f;"></i>
+	                </a>
+	            </td>
+	        </tr>
+	      </table>
+	      </div>
+	   </div>
+</body>
+</html>
